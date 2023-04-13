@@ -50,6 +50,19 @@ public final class HotelCincoEstrellas extends HotelCuatroEstrellas {
     public void setCantidadLimusinas(int cantidadLimusinas) {
         this.cantidadLimusinas = cantidadLimusinas;
     }
+
+    @Override
+    public String toString() {
+        String resultado = "";
+        if(isSalonConferencia()==true){
+            resultado = "Si";
+        }else{
+            resultado = "No";
+        }
+        return super.toString()+", salonConferencia=" + resultado + ", Cantidad de Swits= " + cantidadSwits + ", Cantidad de Limusinas=" + cantidadLimusinas;
+    }
+    
+    
     
     public void cargarHotelCincoEstrellas(){
         Scanner leer = new Scanner (System.in);
@@ -63,6 +76,8 @@ public final class HotelCincoEstrellas extends HotelCuatroEstrellas {
         }
         System.out.println("Ingrese la cantidad de limusinas");
         setCantidadLimusinas(leer.nextInt());
+        System.out.println("Ingrese la cantidad de Swits");
+        setCantidadSwits(leer.nextInt());
     }
     public void precioHabCuatroEst() {
         super.precioHabCuatroEst();

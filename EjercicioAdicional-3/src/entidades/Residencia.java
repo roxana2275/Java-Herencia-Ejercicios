@@ -49,6 +49,26 @@ public final class Residencia extends ExtraHotel{
     public void setCampoDeportes(boolean campoDeportes) {
         this.campoDeportes = campoDeportes;
     }
+
+    @Override
+    public String toString() {
+        
+        String resultadoDescuento = "";
+        String resultadoDeporte="";
+        if (isCampoDeportes()==true){
+            resultadoDeporte = "Si";
+        }else{
+            resultadoDeporte = "No";
+        }
+        if (isDescuentoGremio()==true){
+            resultadoDescuento = "Si";
+        }else{
+            resultadoDescuento = "No";
+        }
+        return super.toString()+", Cantidad de Habitaciones= " + cantidadHabitaciones + ", Descuento a Gremio= " + resultadoDescuento + ", Campo de Deportes=" + resultadoDeporte;
+    }
+    
+    
     
     public void cargarResidencia(){
         Scanner leer = new Scanner (System.in);

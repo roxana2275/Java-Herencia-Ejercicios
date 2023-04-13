@@ -52,6 +52,12 @@ public class HotelCuatroEstrellas extends Hotel {
         this.capacidadRestaurant = capacidadRestaurant;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+ ", Tipo de Gimnasio= " + tipoGim + ", Nombre de Restaurant= " + nombreRestaurant + ", Capacidad del Restaurant= " + capacidadRestaurant;
+    }
+
+    
     public void cararHotelCuatroEstrellas() {
         Scanner leer = new Scanner(System.in);
         cargarHotel();
@@ -70,7 +76,7 @@ public class HotelCuatroEstrellas extends Hotel {
             setTipoGim(TipoGimnasio.B);
         }
         System.out.println("Ingrese el nombre del Restaurant");
-        setNombreRestaurant(leer.nextLine());
+        setNombreRestaurant(leer.next());
         System.out.println("Ingrese la capacidad del Restaurant");
         setCapacidadRestaurant(leer.nextInt());
 

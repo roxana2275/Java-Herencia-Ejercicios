@@ -49,6 +49,19 @@ public final class Camping extends ExtraHotel{
     public void setRestaurant(boolean restaurant) {
         this.restaurant = restaurant;
     }
+
+    @Override
+    public String toString() {
+        String resultado = "";
+        if (isRestaurant()==true){
+            resultado = "Si";
+        }else{
+            resultado = "No";
+        }
+        return super.toString()+", Cantidad Maxima de Carpas= " + cantidadMaximaCarpas + ", Cantidad de Baños= " + cantidadBanios + ", Restaurant= " + resultado;
+    }
+    
+    
     
     public void cargarCamping(){
         Scanner leer = new Scanner (System.in);
@@ -65,4 +78,5 @@ public final class Camping extends ExtraHotel{
             setRestaurant(false);
         }
     }
+
 }

@@ -39,6 +39,19 @@ public abstract class ExtraHotel extends Alojamiento{
     public void setMetrosCuadrados(double metrosCuadrados) {
         this.metrosCuadrados = metrosCuadrados;
     }
+
+    @Override
+    public String toString() {
+        String resultado = "";
+        if (isPrivado()==true){
+            resultado = "Si";
+        }else{
+            resultado = "No";
+        }
+        return "Privado= " + resultado + ", Metros Cuadrados= " + metrosCuadrados;
+    }
+    
+    
     
     public void cargarExtraHotel(){
         Scanner leer = new Scanner(System.in);
@@ -49,6 +62,8 @@ public abstract class ExtraHotel extends Alojamiento{
         }else{
             setPrivado(false);
         }
+        System.out.println("Ingrese la cantidad de metros cuadrados");
+        setMetrosCuadrados(leer.nextDouble());
         
     }
     

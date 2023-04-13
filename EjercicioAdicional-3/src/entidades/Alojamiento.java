@@ -58,6 +58,13 @@ public abstract class Alojamiento {
     public void setGerente(String Gerente) {
         this.Gerente = Gerente;
     }
+
+    @Override
+    public String toString() {
+        return "Alojamiento: " + "Nombre= " + nombre + ", Direccion= " + direccion + ", Localidad= " + localidad + ", Gerente= " + Gerente;
+    }
+    
+    
     
     public void cargarAlojamiento(){
         Scanner leer = new Scanner(System.in);

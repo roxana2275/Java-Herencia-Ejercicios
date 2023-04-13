@@ -59,17 +59,22 @@ public abstract class Hotel extends Alojamiento{
     public void setPrecioHabitacion(double precioHabitacion) {
         this.precioHabitacion = precioHabitacion;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+ ", Cantidad de Habitaciones= " + cantidadHabitaciones + ", Numero de Camas= " + numeroCamas + ", Cantidad de Pisos= " + cantidadPisos;
+    }
     
     public void cargarHotel(){
         Scanner leer = new Scanner (System.in);
         cargarAlojamiento();
         System.out.println("Ingrese la cantidad de Habitaciones");
         setCantidadHabitaciones(leer.nextInt());
+        System.out.println("Ingrese la cantidad de camas");
+        setNumeroCamas(leer.nextInt());
         System.out.println("Ingrese la cantidad de Pisos");
         setCantidadPisos(leer.nextInt());
         setPrecioHabitacion(50+getNumeroCamas());
-        
-        
     }
 
 }
